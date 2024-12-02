@@ -30,14 +30,12 @@
         {
             tbNama = new TextBox();
             btnInsert = new Button();
-            btnEdit = new Button();
+            btnUpdate = new Button();
             btnDelete = new Button();
-            dgvDataGrid = new DataGridView();
+            dgvKaryawan = new DataGridView();
             lblNamakaryawan = new Label();
             lblDepKaryawan = new Label();
             cbDepartemen = new ComboBox();
-            dgvKaryawan = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvDataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvKaryawan).BeginInit();
             SuspendLayout();
             // 
@@ -56,15 +54,17 @@
             btnInsert.TabIndex = 2;
             btnInsert.Text = "Insert";
             btnInsert.UseVisualStyleBackColor = true;
+            btnInsert.Click += btnInsert_Click;
             // 
-            // btnEdit
+            // btnUpdate
             // 
-            btnEdit.Location = new Point(380, 229);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(75, 23);
-            btnEdit.TabIndex = 3;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
+            btnUpdate.Location = new Point(380, 229);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(75, 23);
+            btnUpdate.TabIndex = 3;
+            btnUpdate.Text = "Edit";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
@@ -74,14 +74,17 @@
             btnDelete.TabIndex = 4;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // dgvDataGrid
+            // dgvKaryawan
             // 
-            dgvDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDataGrid.Location = new Point(288, 271);
-            dgvDataGrid.Name = "dgvDataGrid";
-            dgvDataGrid.Size = new Size(320, 150);
-            dgvDataGrid.TabIndex = 5;
+            dgvKaryawan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKaryawan.Location = new Point(288, 271);
+            dgvKaryawan.Name = "dgvKaryawan";
+            dgvKaryawan.Size = new Size(320, 150);
+            dgvKaryawan.TabIndex = 5;
+            dgvKaryawan.CellClick += dgvKaryawan_CellContentClick;
+            dgvKaryawan.CellContentClick += dgvKaryawan_CellContentClick;
             // 
             // lblNamakaryawan
             // 
@@ -110,31 +113,21 @@
             cbDepartemen.Size = new Size(121, 23);
             cbDepartemen.TabIndex = 8;
             // 
-            // dgvKaryawan
-            // 
-            dgvKaryawan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvKaryawan.Location = new Point(449, 103);
-            dgvKaryawan.Name = "dgvKaryawan";
-            dgvKaryawan.Size = new Size(173, 120);
-            dgvKaryawan.TabIndex = 9;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dgvKaryawan);
             Controls.Add(cbDepartemen);
             Controls.Add(lblDepKaryawan);
             Controls.Add(lblNamakaryawan);
-            Controls.Add(dgvDataGrid);
+            Controls.Add(dgvKaryawan);
             Controls.Add(btnDelete);
-            Controls.Add(btnEdit);
+            Controls.Add(btnUpdate);
             Controls.Add(btnInsert);
             Controls.Add(tbNama);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dgvDataGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvKaryawan).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -144,12 +137,11 @@
 
         private TextBox tbNama;
         private Button btnInsert;
-        private Button btnEdit;
+        private Button btnUpdate;
         private Button btnDelete;
-        private DataGridView dgvDataGrid;
+        private DataGridView dgvKaryawan;
         private Label lblNamakaryawan;
         private Label lblDepKaryawan;
         private ComboBox cbDepartemen;
-        private DataGridView dgvKaryawan;
     }
 }
