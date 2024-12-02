@@ -1,6 +1,14 @@
 # 493142-Moh-Nazril-Ilham-ResponsiJuniorProject
 
+
+## ERD Diagram
+
+![Screenshot](Asset/ERD.png)
+
+
 ## Inisialisasi Table Database Dan Function
+
+
 
 Kode berikut digunakan untuk membuat tabel `departemen` dan `karyawan`, serta menginisialisasi sequence untuk ID masing-masing tabel.
 
